@@ -15,3 +15,9 @@ new EmbeddingStack(app, `${Config.app.ns}Embedding`, {
   knowledgeBaseName: Config.knowledgeBase.name,
   dataSourceName: Config.knowledgeBase.dataSourceName,
 });
+
+const tags = cdk.Tags.of(app);
+tags.add('namespace', Config.app.ns);
+tags.add('stage', Config.app.stage);
+
+app.synth();
