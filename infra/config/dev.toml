@@ -1,0 +1,7 @@
+[app]
+ns="AossKBExample"
+stage="Dev"
+
+[knowledgeBase]
+name="aoss-kb-example"
+dataSourceName="aoss-kb-example"
