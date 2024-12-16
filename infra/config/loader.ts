@@ -1,7 +1,7 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import * as joi from 'joi';
-import * as toml from 'toml';
+import * as fs from "fs";
+import * as path from "path";
+import * as joi from "joi";
+import * as toml from "toml";
 
 interface IConfig {
   app: {
@@ -11,13 +11,17 @@ interface IConfig {
   knowledgeBase: {
     name: string;
     dataSourceName: string;
+    instruction: string;
+  };
+  agent: {
+    instruction: string;
   };
 }
 
 const cfg = toml.parse(
-  fs.readFileSync(path.resolve(__dirname, '..', '.toml'), 'utf-8')
+  fs.readFileSync(path.resolve(__dirname, "..", ".toml"), "utf-8"),
 );
-console.log('loaded config', cfg);
+console.log("loaded config", cfg);
 
 const schema = joi
   .object({
@@ -31,6 +35,12 @@ const schema = joi
       .object({
         name: joi.string().required(),
         dataSourceName: joi.string().required(),
+        instruction: joi.string().required(),
+      })
+      .required(),
+    agent: joi
+      .object({
+        instruction: joi.string().required(),
       })
       .required(),
   })

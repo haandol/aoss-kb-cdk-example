@@ -1,7 +1,11 @@
 [app]
-ns="AossKBExample"
-stage="Dev"
+ns = "AossKBExample"
+stage = "Dev"
 
 [knowledgeBase]
-name="aoss-kb-example"
-dataSourceName="aoss-kb-example"
+name = "aoss-kb-example"
+dataSourceName = "aoss-kb-example"
+instruction = "Use this knowledge base to answer questions about video game."
+
+[agent]
+instruction = "You are a helpful and friendly agent that answers questions about video game."
