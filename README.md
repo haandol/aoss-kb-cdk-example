@@ -27,7 +27,7 @@ $ npm i
 2. Install cdk in global context and run `cdk bootstrap` if you did not initailize cdk yet.
 
 ```bash
-$ npm i -g aws-cdk@2.149.0
+$ npm i -g aws-cdk@2.173.1
 $ cdk bootstrap
 ```
 
